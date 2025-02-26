@@ -8,6 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * 客戶要求
      */
     public function up(): void
     {

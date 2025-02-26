@@ -23,13 +23,18 @@
                 <tr>
                     <th width="10%">ID</th>
                     <th>NAME</th>
+                    <th>mobile</th>
                 </tr>
             </thead>
             <tbody>
+                @php
+                // dd($data)    ;
+                @endphp
                 @foreach ($data as $value)
                     <tr>
-                        <td>{{$value['id']}}</td>
-                        <td>{{$value['name']}}</td>
+                        <td>{{$value->id}}</td>
+                        <td>{{$value->name}}</td>
+                        <td>{{$value->mobile}}</td>
                     </tr>
                 @endforeach
 
