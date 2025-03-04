@@ -18,12 +18,15 @@
     <div class="container mt-3">
         <h2>Bordered Table</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <p>
+            <a href="{{route('students.create')}}" class="btn btn-success">add</a>
+        </p>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th width="10%">ID</th>
                     <th>NAME</th>
-                    <th>mobile</th>
+                    <th>MOBILE</th>
                 </tr>
             </thead>
             <tbody>

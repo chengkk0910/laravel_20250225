@@ -14,7 +14,7 @@ class StudentController extends Controller
     {
         // $users = DB::table('users')->get();
         $data = DB::table('students')->get();
-        // dd($data[0]->name);
+        // dd($data);
        
         return view('student.index', ['data' => $data]);
     }
@@ -24,7 +24,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        dd('student controller create');
     }
 
     /**
