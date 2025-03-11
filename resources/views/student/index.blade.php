@@ -54,18 +54,19 @@
     <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
+                <form action="{{ route('students.store') }}" method="post">
 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Create Modal Heading</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Modal Heading</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
 
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class="container mt-3">
-                      
-                        <form action="{{ route('students.store') }}" method="post">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container mt-3">
+
+                            {{-- <form action="{{ //route('students.store') }}" method="post"> --}}
                             {{-- csrf --}}
                             @csrf
 
@@ -80,17 +81,18 @@
                                     name="mobile">
                             </div>
 
-                            
-                        </form>
+
+                            {{-- </form> --}}
+                        </div>
                     </div>
-                </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
 
+                </form>
             </div>
         </div>
     </div>
