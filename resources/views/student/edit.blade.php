@@ -18,7 +18,7 @@
             // dd($data);
         @endphp
 
-        <form action="{{ route('students.update', ['student', $data['id']]) }}" method="post">
+        <form action="{{ route('students.update', ['student' => $data['id']]) }}" method="post">
             {{-- csrf --}}
             @csrf
             @method('put')
