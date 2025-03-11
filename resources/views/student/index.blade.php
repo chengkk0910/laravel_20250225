@@ -28,9 +28,10 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th width="10%">ID</th>
-                    <th>NAME</th>
-                    <th>MOBILE</th>
+                    <th width="5%">ID</th>
+                    <th width="10%">NAME</th>
+                    <th width="20%">MOBILE</th>
+                    <th>OPT</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->mobile }}</td>
+                        <td><a href="{{ route('students.edit', ['student' => 1]) }}" class="btn btn-warning">edit</a></td>
                     </tr>
                 @endforeach
 
