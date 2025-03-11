@@ -22,6 +22,7 @@
             {{-- csrf --}}
             @csrf
             @method('put')
+            {{-- <input type="hidden" name="_method" value="put"> --}}
 
             <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
