@@ -84,19 +84,18 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $input = $request->except('_token','_method');
+        $input = $request->except('_token', '_method');
         $data = Student::where('id', $id)->first();
         // $data = Student::find($id);
 
         // "name" => "cat"
         // "mobile" => "0933"
-        
+
         $data->name = $input['name'];
         $data->mobile = $input['mobile'];
         $data->save();
 
         return redirect()->route('students.index');
-   
     }
 
     /**
@@ -104,7 +103,10 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd("hello destroy $id");
+        $data = Student::where('id', $id)->first();
+        $data->delete();
+        return redirect()->route('students.index');
     }
 
     public function excel()
