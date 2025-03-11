@@ -43,7 +43,7 @@
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->mobile }}</td>
-                        <td><a href="{{ route('students.edit', ['student' => 1]) }}" class="btn btn-warning">edit</a></td>
+                        <td><a href="{{ route('students.edit', ['student' => $value->id]) }}" class="btn btn-warning">edit</a></td>
                     </tr>
                 @endforeach
 
