@@ -14,7 +14,9 @@ class StudentController extends Controller
     public function index()
     {
         // $users = DB::table('users')->get();
-        $data = DB::table('students')->get();
+        // $data = DB::table('students')->get();
+        $data = Student::get();
+        // dd($data);
         // dd($data);
 
         return view('student.index', ['data' => $data]);
@@ -65,9 +67,16 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        $url = route('students.edit', ['student' => $id]);
-        dd($url);
-        dd("hello edit $id");
+        // $url = route('students.edit', ['student' => $id]);
+        // dd($url);
+        // dd("hello edit $id");
+
+        // get fetchAll
+        // first fetch
+        $data = Student::where('id', $id)->first();
+        // dd($data);
+
+        return view('student.edit', ['data' => $data]);
     }
 
     /**
