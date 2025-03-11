@@ -18,9 +18,10 @@
             // dd($data);
         @endphp
 
-        <form action="{{ route('students.store') }}" method="post">
+        <form action="{{ route('students.update', ['student', $data['id']]) }}" method="post">
             {{-- csrf --}}
             @csrf
+            @method('put')
 
             <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
