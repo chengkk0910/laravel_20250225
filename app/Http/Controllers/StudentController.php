@@ -65,6 +65,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
+        $url = route('students.edit', ['student' => $id]);
+        dd($url);
         dd("hello edit $id");
     }
 
