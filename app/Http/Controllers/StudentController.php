@@ -74,14 +74,7 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        // $url = route('students.edit', ['student' => $id]);
-        // dd($url);
-        // dd("hello edit $id");
-
-        // get fetchAll
-        // first fetch
-        $data = Student::where('id', $id)->first();
-        // dd($data);
+        $data = Student::where('id', $id)->with('phone')->first();
 
         return view('student.edit', ['data' => $data]);
     }
@@ -92,15 +85,22 @@ class StudentController extends Controller
     public function update(Request $request, string $id)
     {
         $input = $request->except('_token', '_method');
+
+        //主表
         $data = Student::where('id', $id)->first();
-        // $data = Student::find($id);
-
-        // "name" => "cat"
-        // "mobile" => "0933"
-
         $data->name = $input['name'];
         $data->mobile = $input['mobile'];
         $data->save();
+
+        //子表
+        // 刪除子表
+        Phone::where('student_id', $id)->delete();
+        // 新增子表
+        $item = new Phone;
+        $item->student_id = $data->id;
+        $item->phone = $input['phone'];
+        $item->save();
+
 
         return redirect()->route('students.index');
     }
@@ -108,7 +108,7 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id) 
+    public function destroy(string $id)
     {
         // 刪除子表
         Phone::where('student_id', $id)->delete();
