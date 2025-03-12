@@ -45,6 +45,8 @@
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->mobile }}</td>
                         <td>
+                            {{$value->phone->id ?? ''}}/
+                            {{$value->phone->student_id ?? ''}}/
                             {{$value->phone->phone ?? ''}}
                         </td>
                         <td>
