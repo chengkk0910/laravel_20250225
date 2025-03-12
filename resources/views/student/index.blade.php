@@ -49,7 +49,7 @@
                             {{$value->phoneRelation->phone ?? ''}}
                         </td>
                         <td>
-                            {{$value->hobbiesRelation[0]->name ?? ''}}
+                            {{$value->hobbyString ?? ''}}
                         </td>
                         <td>
                             <form action="{{ route('students.destroy', ['student' => $value->id]) }}" method="post">
