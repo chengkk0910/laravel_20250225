@@ -21,8 +21,21 @@ class StudentController extends Controller
 
         // $phone = User::find(1)->phone;
         $data = Student::with('phoneRelation')->with('hobbiesRelation')->get();
+        $tmpArr = [];
         // dd($data[0]->phoneRelation);
         // dd($data[0]->hobbiesRelation[0]->name);
+        // dd($data[0]);
+
+        // $data foreach
+        foreach ($data as $key1 => $value1) {
+            foreach ($value1->hobbiesRelation as $key2 => $value2) {
+                array_push($tmpArr,$value2->name);
+            }
+        }
+
+        dd($tmpArr);
+
+        // $myArr = ['s14-01','s14-02'];
 
         return view('student.index', ['data' => $data]);
     }
