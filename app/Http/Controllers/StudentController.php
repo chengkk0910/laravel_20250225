@@ -22,7 +22,7 @@ class StudentController extends Controller
         // $phone = User::find(1)->phone;
         $data = Student::with('phoneRelation')->with('hobbiesRelation')->get();
         // dd($data[0]->phoneRelation);
-        dd($data[0]->hobbiesRelation[0]->name);
+        // dd($data[0]->hobbiesRelation[0]->name);
 
         return view('student.index', ['data' => $data]);
     }

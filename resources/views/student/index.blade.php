@@ -32,6 +32,7 @@
                     <th width="10%">NAME</th>
                     <th width="20%">MOBILE</th>
                     <th width="20%">PHONE</th>
+                    <th width="20%">HOBBIES</th>
                     <th>OPT</th>
                 </tr>
             </thead>
@@ -48,6 +49,9 @@
                             {{$value->phoneRelation->id ?? ''}}
                             {{$value->phoneRelation->student_id ?? ''}}
                             {{$value->phoneRelation->phone ?? ''}}
+                        </td>
+                        <td>
+                            {{$value->hobbiesRelation[0]->name ?? ''}}
                         </td>
                         <td>
                             <form action="{{ route('students.destroy', ['student' => $value->id]) }}" method="post">
