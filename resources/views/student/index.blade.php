@@ -45,9 +45,9 @@
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->mobile }}</td>
                         <td>
-                            {{$value->phone->id ?? ''}}
-                            {{$value->phone->student_id ?? ''}}
-                            {{$value->phone->phone ?? ''}}
+                            {{$value->phoneRelation->id ?? ''}}
+                            {{$value->phoneRelation->student_id ?? ''}}
+                            {{$value->phoneRelation->phone ?? ''}}
                         </td>
                         <td>
                             <form action="{{ route('students.destroy', ['student' => $value->id]) }}" method="post">
