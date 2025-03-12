@@ -37,8 +37,14 @@
             <div class="mb-3 mt-3">
                 <label for="mobile">Phone:</label>
                 <input type="mobile" class="form-control" id="phone" placeholder="Enter phone" name="phone"
-                    value="{{ $data['phone']['phone'] ?? '' }}">                    
+                    value="{{ $data['phoneRelation']['phone'] ?? '' }}">                    
             </div>
+            <div class="mb-3 mt-3">
+                <label for="mobile">Hobbies:</label>
+                <input type="mobile" class="form-control" id="phone" placeholder="Enter phone" name="hobbies"
+                    value="{{ $data['hobbyString'] ?? '' }}">                    
+            </div>
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
